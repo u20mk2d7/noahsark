@@ -1,0 +1,101 @@
+bazel-bin*
+bazel-blustone*
+bazel-out*
+bazel-testlogs*
+MODULE.bazel.lock
+# ==========================================
+# C++ / CMake / Conan Build Output
+# ==========================================
+build/
+build-*/
+bin/
+obj/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+_deps/
+vcpkg_installed/
+
+# ==========================================
+# Compiled Binaries & Libraries
+# ==========================================
+*.o
+*.obj
+*.so
+*.so.*
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+*.out
+*.app
+*.elf
+
+# ==========================================
+# Language Server & Compiler Caches
+# ==========================================
+.clangd/
+.cache/
+.cache/clangd/
+.ninja_deps
+.ninja_log
+
+# ==========================================
+# VS Code (Track team settings, ignore local state)
+# ==========================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ==========================================
+# JetBrains IDEs (CLion)
+# ==========================================
+.idea/
+cmake-build-*/
+
+# ==========================================
+# Boost / B2 / Bjam
+# ==========================================
+/b2
+/b2.exe
+/bin.v2
+/bjam
+/bootstrap.log
+/project-config.jam*
+/stage/
+
+# ==========================================
+# Secrets, Environment & Logs
+# ==========================================
+.env
+.env.*
+*.pem
+*.key
+*.log
+log/
+
+# ==========================================
+# Python (if using scripts/conan hooks)
+# ==========================================
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# ==========================================
+# OS Garbage
+# ==========================================
+.DS_Store
+Thumbs.db
+*~
+thirdparty/
+third_party/
