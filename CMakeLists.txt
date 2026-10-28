@@ -13,25 +13,27 @@ add_definitions(${LLVM_DEFINITIONS})
 
 # Find Boost and Abseil packages provided by Conan
 
-find_package(Boost REQUIRED)
-find_package(absl REQUIRED)
-find_package(OpenSSL REQUIRED)
-find_package(GTest REQUIRED)
-find_package(benchmark REQUIRED)
-find_package(jemalloc REQUIRED)
-find_package(flatbuffers REQUIRED)
+find_package(Boost)
+find_package(jemalloc)
+find_package(OpenSSL)
+find_package(flatbuffers)
+find_package(absl)
+find_package(GTest)
+find_package(benchmark)
 
 add_executable(
 	${CMAKE_PROJECT_NAME}
-	/Users/localhost/repos/training/cpp/tips/totw1.cpp
+	cpp/tips/totw1.cpp
 )
 # Map LLVM components to link libraries
 llvm_map_components_to_libnames(llvm_libs core orcjit support native)
 
 # Link LLVM, Boost, and Abseil libraries to your target
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE 
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     ${llvm_libs}
     Boost::boost
     absl::flat_hash_map
     absl::strings
+    boost::boost jemalloc::jemalloc openssl::openssl flatbuffers::flatbuffers abseil::abseil gtest::gtest benchmark::benchmark_main
+
 )
