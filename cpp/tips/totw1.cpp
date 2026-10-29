@@ -3,6 +3,8 @@
 #include <print>
 #include <string>
 #include <string_view>
+#include "llvm/ExecutionEngine/Orc/LLJIT.h"
+#include "llvm/Bitcode/BitcodeAnalyzer.h"
 
 // C Convention
 void TakesCharStar(const char *s) {

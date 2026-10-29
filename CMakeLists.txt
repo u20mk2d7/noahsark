@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD 26)
 find_package(LLVM REQUIRED CONFIG)
 
 message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
+message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
@@ -26,7 +28,7 @@ add_executable(
 	cpp/tips/totw1.cpp
 )
 # Map LLVM components to link libraries
-llvm_map_components_to_libnames(llvm_libs core orcjit support native)
+llvm_map_components_to_libnames(llvm_libs core orcjit support native irreader)
 
 # Link LLVM, Boost, and Abseil libraries to your target
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
